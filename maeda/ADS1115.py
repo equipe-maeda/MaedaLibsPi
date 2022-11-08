@@ -9,7 +9,7 @@ from adafruit_ads1x15.analog_in import AnalogIn
 
 class ADS1115:
     def __init__(self,channel=0):
-        self.dev = busio.I2C(board.SCL, board.SDA)
+        self.dev = busio.I2C(scl=board.SCL, sda=board.SDA)
         #Cria o objeto ADC
         self.ads = ADS.ADS1115(self.dev)
         self.channel = None
