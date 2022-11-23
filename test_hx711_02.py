@@ -23,4 +23,4 @@ hx.reset()   # Before we start, reset the HX711 (not obligate)
 while True:
     measures = hx.get_raw_data(times=20)
     print(measures)
-    # time.sleep(1)
+    # time.sleep(1)   
