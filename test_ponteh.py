@@ -3,6 +3,7 @@ import RPi.GPIO as GPIO  # import GPIO
 GPIO.setwarnings(False)
 from hx711 import HX711  # import the class HX711
 GPIO.setmode(GPIO.BCM)  # set GPIO pin mode to BCM numbering
+from Encoder import Encoder
 
 N3 = 22
 N4 = 4
@@ -14,6 +15,9 @@ GPIO.output(N3, 0)
 GPIO.output(N4, 0)
 
 cmd = 'H'
+
+enc = Encoder(20)
+enc.start()
 
 while cmd.upper() != 'Q':
 
