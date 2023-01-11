@@ -6,13 +6,20 @@ import threading
 
 
 class Encoder(threading.Thread):
-    def __init__(self, channel):
+    def __init__(self, channel, fn):
         threading.Thread.__init__(self)
         self.channel = channel
         GPIO.setup(self.channel, GPIO.IN)
         GPIO.add_event_detect(self.channel, GPIO.RISING)
+        self.fn = fn
     
     def run(self) -> None:
         while True:
-            if GPIO.event_detected(self.channel):
-                print('Detectou!')
+            try:
+                if GPIO.event_detected(self.channel):
+                    self.fn()
+            except:
+                break
+
+    def fn(self):
+        pass

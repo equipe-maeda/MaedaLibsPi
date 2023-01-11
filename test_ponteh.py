@@ -16,7 +16,10 @@ GPIO.output(N4, 0)
 
 cmd = 'H'
 
-enc = Encoder(20)
+def my_func():
+    print('Detectou Renato!')
+
+enc = Encoder(20, my_func)
 enc.start()
 
 while cmd.upper() != 'Q':
