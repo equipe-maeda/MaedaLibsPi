@@ -62,3 +62,6 @@ except (KeyboardInterrupt, SystemExit):
 
 finally:
     GPIO.cleanup()
+
+
+#Rafael 999014006
